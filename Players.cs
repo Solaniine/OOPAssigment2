@@ -79,6 +79,7 @@ namespace Assigment2
                 foreach (int i in  Enumerable.Range(0,numberofplayers))
                 {
                   listofplayers[i] = Console.ReadLine();
+
                 }
 
 
