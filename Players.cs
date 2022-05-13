@@ -36,21 +36,14 @@ namespace Assigment2
             {
 
 
-                while (numberofplayers <= 1)
+                while (numberofplayers <= 1 && numberofplayers > 11)
                 {
                     Console.WriteLine("you can not have one or below 1 players");
-                    numberofplayers = int.Parse(Console.ReadLine());
+                    playeramount();
                 }
-                while (numberofplayers > 11)
-                {
-                    Console.WriteLine("you can not have above 10 players ");
-                    numberofplayers = int.Parse(Console.ReadLine());
-                }
-
 
                 while (numberofplayers < 11)
                 {
-        
                     Console.WriteLine("number of people playing: " + numberofplayers);
                     amountofplayers1to10 = false;
                     break;
@@ -67,10 +60,26 @@ namespace Assigment2
 
             bool playernamed = true;
 
+            string player1 = "";
+            string player2 = "";
+            string player3 = "";
+            string player4 = "";
+            string player5 = "";
+            string player6 = "";
+            string player7 = "";
+            string player8 = "";
+            string player9 = "";
+            string player10 = "";
+            List<string> listofplayers = new List<string> { player1, player2, player3, player4, player5, player6, player7, player8, player9, player10 };
             while (playernamed == true)
             {
 
-
+                
+                Console.WriteLine("now enter each players name");
+                foreach (int i in  Enumerable.Range(0,numberofplayers))
+                {
+                  listofplayers[i] = Console.ReadLine();
+                }
 
 
             }
