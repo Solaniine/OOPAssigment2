@@ -55,9 +55,14 @@ namespace Assigment2
 
             
         }
-        public void playernames()
+        public int PlayerScore { get { return playerscore; } set { playerscore = value; } }
+        public void Player_scores(int score)
         {
-
+            PlayerScore += score;
+        }
+        public void playernames(List<string> playername)
+        {
+                        
             bool playernamed = true;
 
             string player1 = "";
