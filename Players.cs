@@ -12,15 +12,7 @@ namespace Assigment2
         private string playername = "";
         private int playerscore;
         int numberofplayers;
-        public void player(int id, string name, int score)
-        {
-            playerID = id;
-            playername = name;
-            playerscore = score;
-            
 
-           
-        }
         public void playeramount()
         {
             
@@ -34,27 +26,22 @@ namespace Assigment2
             //amount of players between 2 and 10
             while (amountofplayers1to10 == true)
             {
-
-
-                while (numberofplayers <= 1 && numberofplayers > 11)
+                if(numberofplayers  <=1 && numberofplayers >11)
                 {
-                    Console.WriteLine("you can not have one or below 1 players");
+                    Console.WriteLine("The max number of players is 10 and the least is 2");
                     playeramount();
                 }
-
-                while (numberofplayers < 11)
+                else
                 {
-                    Console.WriteLine("number of people playing: " + numberofplayers);
+                    Console.WriteLine("you have"+ ""+ numberofplayers + ""+ "number of players");
                     amountofplayers1to10 = false;
-                    break;
                 }
 
-
-
             }
-
-            
         }
+
+
+
         public int Playerid { get { return playerID; } set { playerID = value; } }
         public string Playername { get { return playername; } set { playername = value; } }
 
@@ -62,6 +49,7 @@ namespace Assigment2
         public void Player_scores(int score)
         {
             Playerscore += score;
+
         }
 
 
@@ -98,6 +86,31 @@ namespace Assigment2
 
 
         }
+        public void playerid(List<string> playerid)
+        {
+            int playerid1 = 1;
+            int playerid2 = 2;
+            int playerid3 = 3;
+            int playerid4 = 4;
+            int playerid5 = 5;
+            int playerid6 = 6;
+            int playerid7 = 7;
+            int playerid8 = 8;
+            int playerid9 = 9;
+            int playerid10 = 10;
+            List<int> listofids = new List<int> { playerid1, playerid2, playerid3, playerid4, playerid5, playerid6, playerid7, playerid8, playerid9, playerid10 };
+            
+        }
+        public void player(List<string> players)
+        {
+            playernames(players);
+            List<string> listofplayers = new List<string>();
 
+            foreach(int i in Enumerable.Range(0,numberofplayers))
+            {
+                
+            }
+
+        }
     }
 }
