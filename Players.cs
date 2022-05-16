@@ -69,7 +69,7 @@ namespace Assigment2
             string player8 = "";
             string player9 = "";
             string player10 = "";
-            List<string> listofplayers = new List<string> { player1, player2, player3, player4, player5, player6, player7, player8, player9, player10 };
+            List<string> listofplayers = new List<string> { };
             while (playernamed == true)
             {
 
@@ -77,7 +77,7 @@ namespace Assigment2
                 Console.WriteLine("now enter each players name");
                 foreach (int i in  Enumerable.Range(0,numberofplayers))
                 {
-                  listofplayers[i] = Console.ReadLine();
+                    listofplayers.Add(Console.ReadLine());
 
                 }
 
@@ -105,10 +105,16 @@ namespace Assigment2
         {
             playernames(players);
             List<string> listofplayers = new List<string>();
+            //player id 
+            playerid(listofplayers);
+            //player names
+            playernames(players);
+            //player score
+            Player_scores(Playerscore);
 
-            foreach(int i in Enumerable.Range(0,numberofplayers))
+            foreach (int i in Enumerable.Range(0,numberofplayers))
             {
-                
+
             }
 
         }
