@@ -103,6 +103,7 @@ namespace Assigment2
         }
         public void player(List<string> players)
         {
+            int i = 0;
             playernames(players);
             List<string> listofplayers = new List<string>();
             //player id 
@@ -111,10 +112,11 @@ namespace Assigment2
             playernames(players);
             //player score
             Player_scores(Playerscore);
-
-            foreach (int i in Enumerable.Range(0,numberofplayers))
+            //playerall
+            List<string> playerall = new List<string>();
+            foreach (string str in listofplayers.Select(i,numberofplayers))
             {
-
+                
             }
 
         }
