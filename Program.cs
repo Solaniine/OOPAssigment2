@@ -15,21 +15,7 @@ namespace Assigment2
             Players players = new Players();
             Console.WriteLine("input the number of players");
             players.playeramount();
-
-            int playerid = i + 1;
             int numberofplayers = int.Parse(Console.ReadLine());
-            for (int i = 0; i < numberofplayers; i++)
-            {
-                
-                Console.Write("Please enter the name of player " + playerid + ": ");
-                string playerName = Console.ReadLine();
-
-                players.Add(new players(playerid, playerName, 0));;
-            }
-            foreach (var player in playeramount)
-            {
-                Console.WriteLine(player.playernames + " " + player.PlayerScore);
-            }
 
 
 
