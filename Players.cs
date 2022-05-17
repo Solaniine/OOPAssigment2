@@ -42,17 +42,13 @@ namespace Assigment2
 
 
 
-        public int Playerid { get { return playerID; } set { playerID = value; } }
-        public string Playername { get { return playername; } set { playername = value; } }
-
         public int Playerscore { get { return playerscore; } set { playerscore = value; } }
-        public void Player_scores(int score)
+        public void Player_scoresupdate(int score)
         {
+
             Playerscore += score;
 
         }
-
-
 
         public void playernames(List<string> playername)
         {
@@ -107,14 +103,15 @@ namespace Assigment2
             playernames(players);
             List<string> listofplayers = new List<string>();
             //player id 
-            playerid(listofplayers);
+            List<string> listofids = new List<string>();
+            playerid(listofids);
             //player names
             playernames(players);
             //player score
-            Player_scores(Playerscore);
+           // Playerscore(playerscore);
             //playerall
             List<string> playerall = new List<string>();
-            foreach (string str in listofplayers.Select(i,numberofplayers))
+            for ( i = 0; i < playerall.Count; i+=3)
             {
                 
             }
