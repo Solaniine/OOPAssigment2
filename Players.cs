@@ -66,12 +66,6 @@ namespace Assigment2
 
 
         }
-        private void playersscore()
-        {
-            int player1score = 0;
-            int player2score = 0;
-            int player3score = 0;
-            
 
         }
         public int Playerscore { get { return playerscore; } set { playerscore = value; } }
@@ -91,25 +85,6 @@ namespace Assigment2
             List<int> listofids = new List<int> { playerid1, playerid2, playerid3};
             
         }
-        public void player(List<string> players)
-        {
-            int i = 0;
-            playernames(players);
-            List<string> listofplayers = new List<string>();
-            //player id 
-            List<string> listofids = new List<string>();
-            playerid(listofids);
-            //player names
-            playernames(players);
-            //player score
-           // Playerscore(playerscore);
-            //playerall
-            List<string> playerall = new List<string>();
-            for ( i = 0; i < playerall.Count; i+=3)
-            {
-                
-            }
-
-        }
+          
     }
 }

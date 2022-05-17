@@ -43,3 +43,11 @@ C:\Users\owen\source\repos\OOPAssigment2\obj\Debug\net6.0\refint\Assigment2.dll
 C:\Users\owen\source\repos\OOPAssigment2\obj\Debug\net6.0\Assigment2.pdb
 C:\Users\owen\source\repos\OOPAssigment2\obj\Debug\net6.0\Assigment2.genruntimeconfig.cache
 C:\Users\owen\source\repos\OOPAssigment2\obj\Debug\net6.0\ref\Assigment2.dll
+C:\Users\Student\Source\Repos\Solaniine\OOPAssigment2\obj\Debug\net6.0\Assigment2.csproj.AssemblyReference.cache
+C:\Users\Student\Source\Repos\Solaniine\OOPAssigment2\obj\Debug\net6.0\Assigment2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\Source\Repos\Solaniine\OOPAssigment2\obj\Debug\net6.0\Assigment2.AssemblyInfoInputs.cache
+C:\Users\Student\Source\Repos\Solaniine\OOPAssigment2\obj\Debug\net6.0\Assigment2.AssemblyInfo.cs
+C:\Users\Student\Source\Repos\Solaniine\OOPAssigment2\obj\Debug\net6.0\Assigment2.csproj.CoreCompileInputs.cache
+C:\Users\Student\Source\Repos\Solaniine\OOPAssigment2\obj\Debug\net6.0\Assigment2.dll
+C:\Users\Student\Source\Repos\Solaniine\OOPAssigment2\obj\Debug\net6.0\refint\Assigment2.dll
+C:\Users\Student\Source\Repos\Solaniine\OOPAssigment2\obj\Debug\net6.0\Assigment2.pdb
