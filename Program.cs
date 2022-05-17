@@ -15,9 +15,12 @@ namespace Assigment2
 
             Players players = new Players();
             Console.WriteLine("input the number of players");
-            //forces int values only 
+            Players.playeramount() ;
+            
             
 
+            RollingDie die = new RollingDie();
+            Console.WriteLine(die.Returndiceroll());
 
         }
     }

@@ -6,21 +6,30 @@ using System.Threading.Tasks;
 
 namespace Assigment2
 {
-    internal class Dice
+
+    internal class RollingDie
     {
+        private Random random;
+        private int sidescount;
 
-        private static readonly Random random = new Random();
-        public static List<int> roll_dice()
+        public RollingDie()
         {
-            List<int> roll = new List<int>();
-           
-            for (int i = 0; i < 6; i++)
-            {
-                roll.Add(random.Next(1, 7));
-            }
-
-            return roll;
+            sidescount = 6;
+            random = new Random();
         }
-        
+        public RollingDie(int sidesCount)
+        {
+            this.sidescount = sidesCount;
+            random = new Random();
+        }
+        public int Returndiceroll()
+        {
+           return random.Next(1, sidescount + 1);
+        }
+
     }
+        
+
+
+    
 }

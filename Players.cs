@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace Assigment2
 {
-    internal class Players
+    public class Players
     {
         private int playerID;
-        private string playername = "";
-        private int playerscore;
-        int numberofplayers;
 
-        public void playeramount()
+        private int playerscore;
+        
+
+        public static void playeramount()
         {
-            
+            int numberofplayers;
+
             bool amountofplayers1to10 = true;
 
             //forces int values only 
@@ -26,46 +27,29 @@ namespace Assigment2
             //amount of players between 2 and 10
             while (amountofplayers1to10 == true)
             {
-                if(numberofplayers  <=1 && numberofplayers >11)
+                if(numberofplayers  <2 && numberofplayers > 4)
                 {
-                    Console.WriteLine("The max number of players is 10 and the least is 2");
+                    Console.WriteLine("The max number of players is 3 and the least is 2");
                     playeramount();
                 }
-                else
-                {
-                    Console.WriteLine("you have"+ ""+ numberofplayers + ""+ "number of players");
+                if (numberofplayers < 4)
+                    {
+                    Console.WriteLine("you have "+ numberofplayers + " "+ "number of players");
                     amountofplayers1to10 = false;
-                }
+                    }
 
             }
         }
-
-
-
-        public int Playerscore { get { return playerscore; } set { playerscore = value; } }
-        public void Player_scoresupdate(int score)
+        public void playernames(List<string> list)
         {
-
-            Playerscore += score;
-
-        }
-
-        public void playernames(List<string> playername)
-        {
-                        
+            List<string> listofplayers = new List<string> { };
             bool playernamed = true;
 
             string player1 = "";
             string player2 = "";
             string player3 = "";
-            string player4 = "";
-            string player5 = "";
-            string player6 = "";
-            string player7 = "";
-            string player8 = "";
-            string player9 = "";
-            string player10 = "";
-            List<string> listofplayers = new List<string> { };
+
+            
             while (playernamed == true)
             {
 
@@ -82,19 +66,29 @@ namespace Assigment2
 
 
         }
+        private void playersscore()
+        {
+            int player1score = 0;
+            int player2score = 0;
+            int player3score = 0;
+            
+
+        }
+        public int Playerscore { get { return playerscore; } set { playerscore = value; } }
+        public void Player_scoresupdate(int score)
+        {
+
+            Playerscore += score;
+
+        }
+
         public void playerid(List<string> playerid)
         {
             int playerid1 = 1;
             int playerid2 = 2;
             int playerid3 = 3;
-            int playerid4 = 4;
-            int playerid5 = 5;
-            int playerid6 = 6;
-            int playerid7 = 7;
-            int playerid8 = 8;
-            int playerid9 = 9;
-            int playerid10 = 10;
-            List<int> listofids = new List<int> { playerid1, playerid2, playerid3, playerid4, playerid5, playerid6, playerid7, playerid8, playerid9, playerid10 };
+
+            List<int> listofids = new List<int> { playerid1, playerid2, playerid3};
             
         }
         public void player(List<string> players)
