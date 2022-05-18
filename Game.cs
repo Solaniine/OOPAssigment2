@@ -158,7 +158,7 @@ namespace Assigment2
                         }
                     }
                    
-                    Console.WriteLine(repeated + "twice repeated, press enter\n");
+                    Console.WriteLine(repeated + " twice repeated, press enter\n");
                     Console.ReadKey();
                     counter++;
 
@@ -168,7 +168,7 @@ namespace Assigment2
             }
             else
             {
-                Console.WriteLine("AI won sorry bud");
+                Console.WriteLine("AI won ");
             }
         }
         private static List<Player> playeramount()
@@ -207,13 +207,11 @@ namespace Assigment2
                 {
                 //id + 1
 
-                    int playerID = i + 1;
-                //adds values to list of players
-                    listofplayers.Add(Console.ReadLine());
+                int playerID = i + 1;
                 //name == user input
                 string playerName = Console.ReadLine();
                 //adds id, name and id to the list
-                    playerlist.Add(new Player(playerID, playerName, 0));
+               playerlist.Add(new Player(playerID, playerName, 0));
                 }
             //returns it back 
             return playerlist;
