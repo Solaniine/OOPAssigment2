@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\owen\\Source\\Repos\\Solaniine\\OOPAssigment2\\Assigment2.csproj": {}
+    "C:\\Users\\owen\\source\\repos\\OOPAssigment2\\Assigment2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\owen\\Source\\Repos\\Solaniine\\OOPAssigment2\\Assigment2.csproj": {
+    "C:\\Users\\owen\\source\\repos\\OOPAssigment2\\Assigment2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\owen\\Source\\Repos\\Solaniine\\OOPAssigment2\\Assigment2.csproj",
+        "projectUniqueName": "C:\\Users\\owen\\source\\repos\\OOPAssigment2\\Assigment2.csproj",
         "projectName": "Assigment2",
-        "projectPath": "C:\\Users\\owen\\Source\\Repos\\Solaniine\\OOPAssigment2\\Assigment2.csproj",
+        "projectPath": "C:\\Users\\owen\\source\\repos\\OOPAssigment2\\Assigment2.csproj",
         "packagesPath": "C:\\Users\\owen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\owen\\Source\\Repos\\Solaniine\\OOPAssigment2\\obj\\",
+        "outputPath": "C:\\Users\\owen\\source\\repos\\OOPAssigment2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\owen\\AppData\\Roaming\\NuGet\\NuGet.Config",

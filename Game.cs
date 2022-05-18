@@ -3,20 +3,91 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
- internal class Game
+namespace Assigment2
+{
+    internal class Game
     {
+
+        private static List<int> ThrowDice()
+        {
+            //the outcome of the dice throw 
+            List<int> throwdie = new List<int>();
+            //5dice allows for 5 rolls
+            RollingDie dice1 = new RollingDie();
+            RollingDie dice2 = new RollingDie();
+            RollingDie dice3 = new RollingDie();
+            RollingDie dice4 = new RollingDie();
+            RollingDie dice5 = new RollingDie();
+            //list of dice 
+            List<RollingDie> diceList = new List<RollingDie>(5) { dice1, dice2, dice3, dice4, dice5 };
+            
+            int counter = 0;
+            //rolls 5 times due to list of dice = 5 
+            foreach (var die in diceList)
+            {
+                //each rolls = one roll of the die 
+                int dieface = die.Returndiceroll();
+                //adds thrown die 
+                throwdie.Add(dieface);
+                //shows counter + the roll value 
+                Console.WriteLine("Dice " + (counter + 1) + " " + dieface + " ");
+                counter++;
+            }
+            return throwdie;
+        }
+        private static List<int> Reroll(int repeat)
+        {
+            List<int> throwdie = new List<int>();
+            //5dice allows for 5 rolls
+            RollingDie dice1 = new RollingDie();
+            RollingDie dice2 = new RollingDie();
+            RollingDie dice3 = new RollingDie();
+            RollingDie dice4 = new RollingDie();
+            RollingDie dice5 = new RollingDie();
+            //list of dice 
+            List<RollingDie> diceList = new List<RollingDie>(5) { dice1, dice2, dice3, dice4, dice5 };
+            //rolls 5 times due to list of dice = 5 
+            int couter = 0;
+            //each rolls = one roll of the die 
+            for (int i = 0; i < diceList.Count; i++)
+            {
+                // i == 0 or i== 1
+                if (i == 0 || i == 1)
+                {
+                    // the amount on the dice = number of repeats
+                    int dieface = repeat;
+                    //add the die to the outcome of dice roll
+                    throwdie.Add(dieface);
+                    //shows counter + the roll value 
+                    Console.WriteLine("Dice " + (couter + 1) + " " + dieface + " ");
+                    couter++;
+                }
+                else
+                {
+                    // diceface = item in list now equals dice roll 
+                    int dieface = diceList[i].Returndiceroll();
+                    // throwdie adds diceroll
+                    throwdie.Add(dieface);
+                    //shows counter + the roll value 
+                    Console.WriteLine("Dice " + (couter + 1) + " " + dieface + " ");
+                    couter++;
+                }
+            }
+            return throwdie;
+        }
         public static void Play()
         {
-            List<Player> playerList = PlayerList();
+
+            List<Player> playerList = playeramount();
             while (true)
             {
                 foreach (var player in playerList)
                 {
-                    Console.WriteLine(player.playernames +"Roll");
-                    GetScore(ThrowDice(),0,player);
-                    Console.WriteLine(player.playernames + "'s Score: " + player.Player_scoresupdate);
-                    if (player.Player_scoresupdate >= 50)
+                    Console.WriteLine("It's " + player.PlayerName + "to roll \r\nPress enter to roll");
+                    Console.ReadKey();
+                    GetScore(ThrowDice(), 0, player);
+                    Console.WriteLine(player.PlayerName + "'s Score: " + player.Playerscore);
+                    if (player.Playerscore >= 50)
                     {
                         Console.WriteLine("Congrats, " + player + "won!");
                         break;
@@ -25,78 +96,53 @@ using System.Threading.Tasks;
             }
         }
 
-        private static List<int> Reroll(int repeat)
+        
+        private static List<Player> playeramount()
         {
-            List<int> throwOutcome = new List<int>();
 
-            Dice dice1 = new Dice();
-            Dice dice2 = new Dice();
-            Dice dice3 = new Dice();
-            Dice dice4 = new Dice();
-            Dice dice5 = new Dice();
+            int numberofplayers = 0;
 
-            List<Dice> diceList = new List<Dice>(5) { dice1, dice2, dice3, dice4, dice5 };
-
-            int couter = 0;
-            for (int i = 0; i < diceList.Count; i++)
+            List<Player> playerlist = new List<Player>();
+            //forces int values only 
+           
+            //amount of players between 2 and 10
+            while (true)
             {
-                if (i == 0 || i == 1)
+                while (!int.TryParse(Console.ReadLine(), out numberofplayers))
                 {
-                    int dieface = repeat;
-                    throwOutcome.Add(dieface);
-                    Console.WriteLine("Dice " + (couter + 1) + " " + dieface + " ");
-                    couter++;
+                    Console.Write("This is not valid input. Please enter an integer value: ");
+                }
+
+                if (numberofplayers < 2 || numberofplayers > 11)
+                {
+                    Console.WriteLine("The max number of players is 11 and the least is 2");
+                    playeramount();
                 }
                 else
                 {
-                    int dieface = diceList[i].rollDie();
-                    throwOutcome.Add(dieface);
-                    Console.WriteLine("Dice " + (couter + 1) + " " + dieface + " ");
-                    couter++;
+                    Console.WriteLine("you have " + numberofplayers + " " + "number of players");
+                    break;
                 }
+
             }
-            return throwOutcome;
-            }
-        // this method returns a List of numbers that appear on the dice faces once the dice is thrown
-        private static List<int> ThrowDice()
-        {
-            List<int> throwOutcome = new List<int>();
+            List<string> listofplayers = new List<string> { };
+
+                Console.WriteLine("now enter each players name");
+            foreach (int i in Enumerable.Range(0, numberofplayers))
+                {
+                    int playerID = i + 1;
+                    listofplayers.Add(Console.ReadLine());
+                    string playerName = Console.ReadLine();
+                    playerlist.Add(new Player(playerID, playerName, 0));
+                }
+            return playerlist;
+
             
-            Dice dice1 = new Dice();
-            Dice dice2 = new Dice();
-            Dice dice3 = new Dice();
-            Dice dice4 = new Dice();
-            Dice dice5 = new Dice();
-
-            List<Dice> diceList = new List<Dice>(5) { dice1, dice2, dice3, dice4, dice5 };
-
-            int couter = 0;
-            foreach (var die in diceList)
-            {
-                int dieface = die.rollDie();
-                throwOutcome.Add(dieface);
-                Console.WriteLine("Dice " + (couter+1) + " " + dieface + " ");
-                couter++;
-            }
-            return throwOutcome;
         }
-        
-            for (int i = 0; i < numberOfPlayers; i++)
-            {
-                int playerID = i + 1;
-                Console.Write("Please enter the name of player " + playerID + ": ");
-                string playerName = Console.ReadLine();
-
-                playerList.Add(new Player(playerID, playerName, 0));
-            }
-
-            return playerList;
-        }
-
         private static void GetScore(List<int> dieValues, int counter, Player player)
         {
             int score = 0;
-            Dictionary<int,int> diceThrow = new Dictionary<int,int>(6)
+            Dictionary<int, int> diceThrow = new Dictionary<int, int>(6)
             {
                 {1,0},
                 {2,0},
@@ -109,27 +155,27 @@ using System.Threading.Tasks;
             {
                 diceThrow[dieValue]++;
             }
-            
+
             int maxValue = diceThrow.Values.Max();
             Console.WriteLine("Max value is: " + maxValue);
 
             if (maxValue == 5)
             {
-                player.Update_score(12);
+                player.Player_scoresupdate(12);
             }
             else if (maxValue == 4)
             {
-                player.Update_score(6);
+                player.Player_scoresupdate(6);
             }
             else if (maxValue == 3)
             {
-                player.Update_score(3);
+                player.Player_scoresupdate(3);
             }
             else if (maxValue == 2)
             {
                 if (counter < 1)
                 {
-                    // gets the key of the value with the maximum 
+                
                     int repeatedValue = 0;
 
                     foreach (var pair in diceThrow)
@@ -145,7 +191,7 @@ using System.Threading.Tasks;
                     counter++;
 
                     List<int> newList = Reroll(repeatedValue);
-                    GetScore(newList,counter,player);
+                    GetScore(newList, counter, player);
                 }
             }
             else

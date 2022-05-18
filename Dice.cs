@@ -9,22 +9,18 @@ namespace Assigment2
 
     internal class RollingDie
     {
-        private Random random;
-        private int sidescount;
-
-        public RollingDie()
+       
+        private int sidescount = 6;
+      
+        public int numberoffaces
         {
-            sidescount = 6;
-            random = new Random();
-        }
-        public RollingDie(int sidesCount)
-        {
-            this.sidescount = sidesCount;
-            random = new Random();
+            get { return sidescount; }
         }
         public int Returndiceroll()
         {
-           return random.Next(1, sidescount + 1);
+            
+            Random random = new Random();
+            return random.Next(1, sidescount + 1);
         }
 
     }
